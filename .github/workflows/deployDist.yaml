@@ -16,7 +16,7 @@ jobs:
       - name: Install Nodejs 20
         uses: actions/setup-nodejs@v4
         with:
-          node-versions: 20
+          node-version: 20
       - name: prine node version
         run: node -v 
       - name: Install Dependencies
