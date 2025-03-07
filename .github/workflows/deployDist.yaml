@@ -17,6 +17,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Cache Depedencies
+        uses: actions/cache@v4 
+        with:
+          path: ~/.npm  
+          # ubuntu-node-23
+          key: ${{ runner.os }}-node-${{hashFiles('**/package-lock.json')}}
       - name: print node version
         run: node -v
       - name: Install Dependencies
@@ -33,6 +39,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Cache Depedencies
+        uses: actions/cache@v4 
+        with:
+          path: ~/.npm  
+          # ubuntu-node-23
+          key: ${{ runner.os }}-node-${{hashFiles('**/package-lock.json')}}    
       - name: Install Dependencies
         run: npm ci
       - name: Build Project
